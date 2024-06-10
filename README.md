@@ -16,3 +16,8 @@ run all the tests and generating report
 run single scenario using tag
 run tests on parallel mode
 ````
+
+https://parabank.parasoft.com used as the Test website to run all the tests
+
+Tests were created to register new user and login
+Creating different types of accounts.
