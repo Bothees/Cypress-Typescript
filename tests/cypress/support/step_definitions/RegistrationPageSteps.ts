@@ -21,7 +21,7 @@ When(/^I enter the (.*) details on following format$/,  (userFileName: string,da
     userData.Zipcode = faker.location.zipCode();
     userData.Phone = faker.phone.number();
     userData.SSN = faker.number.int( { min: 0, max: 9999999 });
-    userData.Username = faker.internet.userName();
+    userData.Username = `auto-${faker.internet.userName()}`;
     userData.Password = faker.internet.password();
     userData.ConfirmPassword = userData.Password;
     saveTestDataFile(userFileName, userData);

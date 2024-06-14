@@ -38,7 +38,6 @@ export default class RegistrationPage {
         password().type(userData.Password);
         confirmPassword().type(userData.ConfirmPassword);
         register().click();
-
     }
 
     login(user: any) {

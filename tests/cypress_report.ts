@@ -3,7 +3,7 @@ const screenshot = require('./attchScreenshotsToReport');
 
 screenshot.prepareScreenshots().then(() =>
   report.generate({
-    jsonDir: 'cypress/cucumber-json',
+    jsonDir: 'json-logs/',
     reportPath: 'cypress/cucumber_report.html',
     reportTitle: 'Technical-test',
     customData: {

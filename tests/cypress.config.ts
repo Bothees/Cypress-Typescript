@@ -20,8 +20,8 @@ module.exports = defineConfig({
   },
   reporterOptions: {
     reportDir: 'cypress/cucumber_report.*',
-    jsonDir: 'cypress/cucumber-json',
-    html: false,
+    jsonDir: 'json-logs/',
+    html: true,
     json: true,
     code: false,
     overwrite: false,
@@ -31,11 +31,12 @@ module.exports = defineConfig({
   watchForFileChanges: false,
   e2e: {
     async setupNodeEvents(on, config) {
+      await addCucumberPreprocessorPlugin(on, config);
       const bundler = createBundler({
         plugins: [createEsbuildPlugin(config)],
       });
       on('file:preprocessor', bundler);
-      await addCucumberPreprocessorPlugin(on, config);
+      // This is required for the preprocessor to be able to generate JSON reports after each run, and more,
       return config;
     },
     specPattern: 'cypress/features/*.{feature,features}',
