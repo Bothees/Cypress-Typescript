@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
 const path = require('path');
 
-const cucumberJsonDir = '/cypress/cucumber-json';
+const cucumberJsonDir = '/json-logs/';
 const screenshotsDir = '/cypress/screenshots/features';
 
 const featureToFileMap = {};

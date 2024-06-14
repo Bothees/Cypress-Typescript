@@ -38,11 +38,10 @@
     "filterSpecs": true,
     "omitFiltered": true,
     "step_definitions": "cypress/support/step_definitions/",
-    "cucumberJson": {
-      "generate": true,
-      "outputFolder": "cypress/cucumber-json",
-      "filePrefix": "",
-      "fileSuffix": ".cucumber"
+    "json": {
+      "enabled": true,
+      "formatter": "./jsonFormatter/cucumber-json-formatter",
+      "output": "json-logs/report.json"
     }
   }
 }
