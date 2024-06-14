@@ -18,9 +18,11 @@ module.exports = defineConfig({
     runMode: 2,
     openMode: 0,
   },
+  reporter: 'cypress-multi-reporters',
   reporterOptions: {
     reportDir: 'cypress/cucumber_report.*',
     jsonDir: 'json-logs/',
+    configFile: 'multi-reporter-config.json',
     html: true,
     json: true,
     code: false,
