@@ -2,3 +2,8 @@
 ./cypress/fixtures/
 ./cypress/cucumber-json
 ./cypress/cucumber_report.html
+./cypress/results
+./cypress/screenshots
+./runner-results
+./json-logs
+./cypress/parallel-weights.json

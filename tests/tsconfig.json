@@ -1,14 +1,15 @@
 {
   "compilerOptions": {
     "strict": true,
-    "target": "es5",
-    "allowJs": true,
+    "target": "es2019",
+    "module": "esNext",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "lib": ["es2022", "dom"],
-    "types": ["cypress", "node"],
+    "lib": ["esNext", "dom"],
+    "typeRoots": ["./node_modules/@types", "../tests/cypress/support"],
+    "types": ["cypress", "node"]
   },
-  "include": ["cypress"],
-  "exclude": ["node_modules"]
+  "include": ["./**/*.ts"],
 }
