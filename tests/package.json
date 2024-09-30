@@ -4,7 +4,7 @@
   "scripts": {
     "cypress:runner": "cypress open",
     "cypress:run": "cypress run",
-    "cypress:clean": "ts-node cypress_clean.ts",
+    "cypress:clean": "rm -rf cypress/results",
     "cypress:report": "ts-node cucumberReports.ts",
     "cypress:run:report": "npm run cypress:clean; npm run cypress:run ; npm run cypress:report",
     "cypress:run:singleTest": "npx cypress run --env TAGS='@test'",

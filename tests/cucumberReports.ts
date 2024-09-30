@@ -3,10 +3,12 @@ const fs = require('fs');
 
 const data = fs.readFileSync('cypress/execution-time.json', { encoding: 'utf8' , flags: 'r' });
 const runInfos = JSON.parse(data);
-const startTime = new Date(runInfos.startedTestAt);
-const endTime = new Date(runInfos.endedTestAt);
+const startTime = new Date(runInfos.startedTestsAt);
+const endTime = new Date(runInfos.endedTestsAt);
+console.log(startTime, endTime);
 const diff = endTime.getTime() - startTime.getTime();
-// const duration  = new Date(diff).toISOString().substring(11,19);
+console.log('difference', diff)
+const duration  = new Date(diff).toISOString().substring(11,19);
 
 const options = {
     jsonDir: './cypress/results/',
@@ -28,9 +30,9 @@ const options = {
         title: 'Technical-test',
         data: [
             { label: 'Technical-test' , value: 'Technical-test' },
-            { label: 'suite execution start time', value: new Date(runInfos.startedTestAt).toLocaleString() },
-            { label: 'suite execution end time', value: new Date(runInfos.endedTestAt).toLocaleString() },
-            { label: 'Total duration', value: 14 },
+            { label: 'suite execution start time', value: new Date(runInfos.startedTestsAt).toLocaleString() },
+            { label: 'suite execution end time', value: new Date(runInfos.endedTestsAt).toLocaleString() },
+            { label: 'Total duration', value: duration },
         ]
     },
     reportSuiteAsScenarios: true,
