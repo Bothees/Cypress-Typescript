@@ -1,4 +1,4 @@
-# Technical-test-LA
+# Cypress automation test framework with Typescript
 
 This Framework built with Cypress with Typescript and Cucumber.
 
